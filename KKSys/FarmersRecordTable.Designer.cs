@@ -30,42 +30,49 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            dataGridView1 = new DataGridView();
+            farmersTableGrid = new DataGridView();
             btnFarmersClose = new Button();
             btnFarmersMaximize = new Button();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            id = new DataGridViewTextBoxColumn();
-            firstName = new DataGridViewTextBoxColumn();
-            surName = new DataGridViewTextBoxColumn();
-            gender = new DataGridViewTextBoxColumn();
-            DoB = new DataGridViewTextBoxColumn();
-            farmerID = new DataGridViewTextBoxColumn();
-            nationalID = new DataGridViewTextBoxColumn();
-            phoneNumber = new DataGridViewTextBoxColumn();
-            location = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)farmersTableGrid).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // farmersTableGrid
             // 
-            dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, firstName, surName, gender, DoB, farmerID, nationalID, phoneNumber, location });
-            dataGridView1.Location = new Point(12, 68);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1416, 741);
-            dataGridView1.TabIndex = 0;
+            farmersTableGrid.AllowUserToAddRows = false;
+            farmersTableGrid.AllowUserToDeleteRows = false;
+            farmersTableGrid.AllowUserToOrderColumns = true;
+            farmersTableGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            farmersTableGrid.BackgroundColor = SystemColors.AppWorkspace;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            farmersTableGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            farmersTableGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            farmersTableGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            farmersTableGrid.GridColor = Color.Black;
+            farmersTableGrid.Location = new Point(12, 68);
+            farmersTableGrid.Name = "farmersTableGrid";
+            farmersTableGrid.ReadOnly = true;
+            farmersTableGrid.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            farmersTableGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            farmersTableGrid.Size = new Size(1416, 741);
+            farmersTableGrid.TabIndex = 0;
+            farmersTableGrid.CellContentClick += farmersTableGrid_CellContentClick;
             // 
             // btnFarmersClose
             // 
@@ -132,87 +139,6 @@
             button3.Text = "ADD";
             button3.UseVisualStyleBackColor = true;
             // 
-            // id
-            // 
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            id.DefaultCellStyle = dataGridViewCellStyle1;
-            id.HeaderText = "ID";
-            id.MinimumWidth = 8;
-            id.Name = "id";
-            id.Width = 150;
-            // 
-            // firstName
-            // 
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            firstName.DefaultCellStyle = dataGridViewCellStyle2;
-            firstName.HeaderText = "First Name";
-            firstName.MinimumWidth = 8;
-            firstName.Name = "firstName";
-            firstName.Width = 150;
-            // 
-            // surName
-            // 
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            surName.DefaultCellStyle = dataGridViewCellStyle3;
-            surName.HeaderText = "Surname";
-            surName.MinimumWidth = 8;
-            surName.Name = "surName";
-            surName.Width = 150;
-            // 
-            // gender
-            // 
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            gender.DefaultCellStyle = dataGridViewCellStyle4;
-            gender.HeaderText = "Gender";
-            gender.MinimumWidth = 8;
-            gender.Name = "gender";
-            gender.Width = 150;
-            // 
-            // DoB
-            // 
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DoB.DefaultCellStyle = dataGridViewCellStyle5;
-            DoB.HeaderText = "Date of Birth";
-            DoB.MinimumWidth = 8;
-            DoB.Name = "DoB";
-            DoB.Width = 150;
-            // 
-            // farmerID
-            // 
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            farmerID.DefaultCellStyle = dataGridViewCellStyle6;
-            farmerID.HeaderText = "Farmer ID";
-            farmerID.MinimumWidth = 8;
-            farmerID.Name = "farmerID";
-            farmerID.Width = 150;
-            // 
-            // nationalID
-            // 
-            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            nationalID.DefaultCellStyle = dataGridViewCellStyle7;
-            nationalID.HeaderText = "National ID";
-            nationalID.MinimumWidth = 8;
-            nationalID.Name = "nationalID";
-            nationalID.Width = 150;
-            // 
-            // phoneNumber
-            // 
-            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            phoneNumber.DefaultCellStyle = dataGridViewCellStyle8;
-            phoneNumber.HeaderText = "Phone Number";
-            phoneNumber.MinimumWidth = 8;
-            phoneNumber.Name = "phoneNumber";
-            phoneNumber.Width = 150;
-            // 
-            // location
-            // 
-            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            location.DefaultCellStyle = dataGridViewCellStyle9;
-            location.HeaderText = "Location";
-            location.MinimumWidth = 8;
-            location.Name = "location";
-            location.Width = 150;
-            // 
             // FarmersRecordTable
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -223,32 +149,23 @@
             Controls.Add(button1);
             Controls.Add(btnFarmersMaximize);
             Controls.Add(btnFarmersClose);
-            Controls.Add(dataGridView1);
+            Controls.Add(farmersTableGrid);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FarmersRecordTable";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FarmersRecordTable";
             Load += FarmersRecordTable_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)farmersTableGrid).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView farmersTableGrid;
         private Button btnFarmersClose;
         private Button btnFarmersMaximize;
         private Button button1;
         private Button button2;
         private Button button3;
-        private DataGridViewTextBoxColumn id;
-        private DataGridViewTextBoxColumn firstName;
-        private DataGridViewTextBoxColumn surName;
-        private DataGridViewTextBoxColumn gender;
-        private DataGridViewTextBoxColumn DoB;
-        private DataGridViewTextBoxColumn farmerID;
-        private DataGridViewTextBoxColumn nationalID;
-        private DataGridViewTextBoxColumn phoneNumber;
-        private DataGridViewTextBoxColumn location;
     }
 }
