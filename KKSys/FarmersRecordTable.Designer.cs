@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             farmersTableGrid = new DataGridView();
             btnFarmersClose = new Button();
             btnFarmersMaximize = new Button();
-            button1 = new Button();
+            btnDelete = new Button();
             button2 = new Button();
             button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)farmersTableGrid).BeginInit();
@@ -46,24 +46,24 @@
             farmersTableGrid.AllowUserToOrderColumns = true;
             farmersTableGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             farmersTableGrid.BackgroundColor = SystemColors.AppWorkspace;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            farmersTableGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            farmersTableGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             farmersTableGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            farmersTableGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.Padding = new Padding(1);
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            farmersTableGrid.DefaultCellStyle = dataGridViewCellStyle6;
             farmersTableGrid.GridColor = Color.Black;
             farmersTableGrid.Location = new Point(12, 68);
             farmersTableGrid.Name = "farmersTableGrid";
@@ -100,18 +100,19 @@
             btnFarmersMaximize.UseVisualStyleBackColor = true;
             btnFarmersMaximize.Click += btnFarmersMaximize_Click;
             // 
-            // button1
+            // btnDelete
             // 
-            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            button1.Image = Properties.Resources.icons8_delete_30;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(60, 816);
-            button1.Name = "button1";
-            button1.Padding = new Padding(10, 0, 0, 0);
-            button1.Size = new Size(134, 53);
-            button1.TabIndex = 3;
-            button1.Text = "DELETE";
-            button1.UseVisualStyleBackColor = true;
+            btnDelete.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnDelete.Image = Properties.Resources.icons8_delete_30;
+            btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDelete.Location = new Point(60, 816);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Padding = new Padding(10, 0, 0, 0);
+            btnDelete.Size = new Size(134, 53);
+            btnDelete.TabIndex = 3;
+            btnDelete.Text = "DELETE";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // button2
             // 
@@ -146,7 +147,7 @@
             ClientSize = new Size(1440, 874);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnDelete);
             Controls.Add(btnFarmersMaximize);
             Controls.Add(btnFarmersClose);
             Controls.Add(farmersTableGrid);
@@ -164,7 +165,7 @@
         private DataGridView farmersTableGrid;
         private Button btnFarmersClose;
         private Button btnFarmersMaximize;
-        private Button button1;
+        private Button btnDelete;
         private Button button2;
         private Button button3;
     }

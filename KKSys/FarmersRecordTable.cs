@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Utilities;
 
 namespace KKSys
 {
@@ -71,7 +72,7 @@ namespace KKSys
 
                 farmersTableGrid.DataSource = myDataTable;
 
-                conn.Close();   
+                conn.Close();
             }
             catch (Exception ex)
             {
@@ -83,8 +84,49 @@ namespace KKSys
         private void farmersTableGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+
+
+        }
+
+
+        private void deleteFarmer(int id)
+        {
+            try
+            {
+                string conString = "server=localhost; user name=root; password=; database=kks_database;";
+                MySqlConnection conn = new MySqlConnection(conString);
+                conn.Open();
+
+                string sqlCommand = "DELETE FROM farmer WHERE id=@farmer_id";
+                MySqlCommand command = new MySqlCommand(sqlCommand, conn);
+                command.Parameters.AddWithValue("farmer_id", id);
+                command.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+              
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var selectedRow = farmersTableGrid.SelectedRows[0];
+            var farmerID = int.Parse(s: selectedRow.Cells["ID"].Value.ToString());
+
+            DialogResult = MessageBox.Show("Are you sure want to delete", "Deleting farmer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (DialogResult == DialogResult.Yes) {
+
+                deleteFarmer(farmerID);
+
+                injectFarmerData();
+
+            }
             
-            
+
         }
     }
 }
