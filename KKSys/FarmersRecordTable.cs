@@ -14,6 +14,8 @@ namespace KKSys
 {
     public partial class FarmersRecordTable : Form
     {
+
+        private Form currentChildForm;
         public FarmersRecordTable()
         {
             InitializeComponent();
@@ -108,7 +110,7 @@ namespace KKSys
             {
                 MessageBox.Show(ex.ToString(), "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-              
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -118,15 +120,42 @@ namespace KKSys
 
             DialogResult = MessageBox.Show("Are you sure want to delete", "Deleting farmer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (DialogResult == DialogResult.Yes) {
+            if (DialogResult == DialogResult.Yes)
+            {
 
                 deleteFarmer(farmerID);
 
                 injectFarmerData();
 
             }
-            
 
+
+        }
+
+        private void openChildForm(Form childForm)
+        {
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.MdiParent = this;
+            childForm.Show();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            newFarmer farmer = new newFarmer();
+
+            openChildForm(farmer);
+
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            FaarmerUpdate farmerUpdate = new FaarmerUpdate();
+            farmerUpdate.Show();
         }
     }
 }

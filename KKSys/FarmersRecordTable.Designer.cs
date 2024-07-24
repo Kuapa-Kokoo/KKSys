@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             farmersTableGrid = new DataGridView();
             btnFarmersClose = new Button();
             btnFarmersMaximize = new Button();
             btnDelete = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnUpdate = new Button();
+            btnAdd = new Button();
             ((System.ComponentModel.ISupportInitialize)farmersTableGrid).BeginInit();
             SuspendLayout();
             // 
@@ -46,24 +46,24 @@
             farmersTableGrid.AllowUserToOrderColumns = true;
             farmersTableGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             farmersTableGrid.BackgroundColor = SystemColors.AppWorkspace;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            farmersTableGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            farmersTableGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             farmersTableGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.Padding = new Padding(1);
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            farmersTableGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Arial", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new Padding(1);
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            farmersTableGrid.DefaultCellStyle = dataGridViewCellStyle4;
             farmersTableGrid.GridColor = Color.Black;
             farmersTableGrid.Location = new Point(12, 68);
             farmersTableGrid.Name = "farmersTableGrid";
@@ -114,39 +114,41 @@
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
             // 
-            // button2
+            // btnUpdate
             // 
-            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            button2.Image = Properties.Resources.icons8_update_30;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(219, 816);
-            button2.Name = "button2";
-            button2.Padding = new Padding(10, 0, 0, 0);
-            button2.Size = new Size(151, 53);
-            button2.TabIndex = 4;
-            button2.Text = "UPDATE";
-            button2.UseVisualStyleBackColor = true;
+            btnUpdate.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnUpdate.Image = Properties.Resources.icons8_update_30;
+            btnUpdate.ImageAlign = ContentAlignment.MiddleLeft;
+            btnUpdate.Location = new Point(219, 816);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Padding = new Padding(10, 0, 0, 0);
+            btnUpdate.Size = new Size(151, 53);
+            btnUpdate.TabIndex = 4;
+            btnUpdate.Text = "UPDATE";
+            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
-            // button3
+            // btnAdd
             // 
-            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            button3.Image = Properties.Resources.icons8_plus_301;
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(396, 816);
-            button3.Name = "button3";
-            button3.Padding = new Padding(10, 0, 0, 0);
-            button3.Size = new Size(151, 53);
-            button3.TabIndex = 5;
-            button3.Text = "ADD";
-            button3.UseVisualStyleBackColor = true;
+            btnAdd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnAdd.Image = Properties.Resources.icons8_plus_301;
+            btnAdd.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdd.Location = new Point(396, 816);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Padding = new Padding(10, 0, 0, 0);
+            btnAdd.Size = new Size(151, 53);
+            btnAdd.TabIndex = 5;
+            btnAdd.Text = "ADD";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // FarmersRecordTable
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1440, 874);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(btnAdd);
+            Controls.Add(btnUpdate);
             Controls.Add(btnDelete);
             Controls.Add(btnFarmersMaximize);
             Controls.Add(btnFarmersClose);
@@ -166,7 +168,7 @@
         private Button btnFarmersClose;
         private Button btnFarmersMaximize;
         private Button btnDelete;
-        private Button button2;
-        private Button button3;
+        private Button btnUpdate;
+        private Button btnAdd;
     }
 }
