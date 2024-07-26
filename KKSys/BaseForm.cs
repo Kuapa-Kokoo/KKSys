@@ -2,13 +2,13 @@ namespace KKSys
 {
     public partial class BaseForm : Form
     {
-        private Form currentChildForm;
+        public Form currentChildForm;
         public BaseForm()
         {
             InitializeComponent();
         }
 
-        private void openChildForm(Form childForm)
+        public void openChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {
