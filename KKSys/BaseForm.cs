@@ -40,5 +40,38 @@ namespace KKSys
             FarmersRecordTable farmersRecord = new FarmersRecordTable();
             openChildForm(farmersRecord);
         }
+
+        private void addRegionButton_Click(object sender, EventArgs e)
+        {
+            newRegion region = new newRegion();
+
+            openChildForm(region);
+
+            /*newRegion region = new newRegion();
+            region.MdiParent = this;
+            region.Show();*/
+        }
+
+        private void addDistrictButton_Click(object sender, EventArgs e)
+        {
+            newDistrict district = new newDistrict();
+
+            openChildForm(district);
+
+            /*newDistrict district = new newDistrict();
+            district.MdiParent = this;
+            district.Show();*/
+        }
+
+        private void addZoneButton_Click(object sender, EventArgs e)
+        {
+            newZone zone = new newZone();
+
+            openChildForm(zone);
+
+            /*newZone zone = new newZone();
+            zone.MdiParent = this;
+            zone.Show();*/
+        }
     }
 }

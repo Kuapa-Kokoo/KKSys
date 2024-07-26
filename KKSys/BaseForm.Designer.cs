@@ -62,8 +62,9 @@
             panel1.Controls.Add(menuStrip1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1180, 70);
+            panel1.Size = new Size(826, 42);
             panel1.TabIndex = 1;
             // 
             // searchButton
@@ -71,9 +72,10 @@
             searchButton.Anchor = AnchorStyles.Right;
             searchButton.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             searchButton.Image = (Image)resources.GetObject("searchButton.Image");
-            searchButton.Location = new Point(1063, 12);
+            searchButton.Location = new Point(744, 7);
+            searchButton.Margin = new Padding(2);
             searchButton.Name = "searchButton";
-            searchButton.Size = new Size(85, 48);
+            searchButton.Size = new Size(60, 29);
             searchButton.TabIndex = 1;
             searchButton.UseVisualStyleBackColor = true;
             // 
@@ -81,11 +83,12 @@
             // 
             txtSearchBox.Anchor = AnchorStyles.Right;
             txtSearchBox.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSearchBox.Location = new Point(625, 12);
+            txtSearchBox.Location = new Point(438, 7);
+            txtSearchBox.Margin = new Padding(2);
             txtSearchBox.Multiline = true;
             txtSearchBox.Name = "txtSearchBox";
             txtSearchBox.PlaceholderText = "Search ...";
-            txtSearchBox.Size = new Size(432, 48);
+            txtSearchBox.Size = new Size(304, 30);
             txtSearchBox.TabIndex = 0;
             // 
             // menuStrip1
@@ -95,10 +98,10 @@
             menuStrip1.Dock = DockStyle.None;
             menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Items.AddRange(new ToolStripItem[] { dashboardButton, farmersToolStripMenuItem, farmsToolStripMenuItem, kKDetailsToolStripMenuItem });
-            menuStrip1.Location = new Point(22, 12);
+            menuStrip1.Location = new Point(15, 7);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(6, 2, 0, 10);
-            menuStrip1.Size = new Size(783, 48);
+            menuStrip1.Padding = new Padding(4, 1, 0, 6);
+            menuStrip1.Size = new Size(561, 35);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -107,7 +110,7 @@
             dashboardButton.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dashboardButton.Image = Properties.Resources.icons8_home_30;
             dashboardButton.Name = "dashboardButton";
-            dashboardButton.Size = new Size(172, 36);
+            dashboardButton.Size = new Size(125, 28);
             dashboardButton.Text = "Dashboard";
             // 
             // farmersToolStripMenuItem
@@ -116,20 +119,20 @@
             farmersToolStripMenuItem.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             farmersToolStripMenuItem.Image = Properties.Resources.icons8_people_30;
             farmersToolStripMenuItem.Name = "farmersToolStripMenuItem";
-            farmersToolStripMenuItem.Size = new Size(140, 36);
+            farmersToolStripMenuItem.Size = new Size(103, 28);
             farmersToolStripMenuItem.Text = "Farmers";
             // 
             // displayFarmersButton
             // 
             displayFarmersButton.Name = "displayFarmersButton";
-            displayFarmersButton.Size = new Size(289, 40);
+            displayFarmersButton.Size = new Size(193, 26);
             displayFarmersButton.Text = "Display Farmers";
             displayFarmersButton.Click += displayFarmersButton_Click;
             // 
             // addFarmerButton
             // 
             addFarmerButton.Name = "addFarmerButton";
-            addFarmerButton.Size = new Size(289, 40);
+            addFarmerButton.Size = new Size(193, 26);
             addFarmerButton.Text = "Add Farmer";
             addFarmerButton.Click += addFarmerButton_Click;
             // 
@@ -139,19 +142,19 @@
             farmsToolStripMenuItem.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             farmsToolStripMenuItem.Image = Properties.Resources.icons8_cocoa_30;
             farmsToolStripMenuItem.Name = "farmsToolStripMenuItem";
-            farmsToolStripMenuItem.Size = new Size(118, 36);
+            farmsToolStripMenuItem.Size = new Size(88, 28);
             farmsToolStripMenuItem.Text = "Farms";
             // 
             // displayFarmButton
             // 
             displayFarmButton.Name = "displayFarmButton";
-            displayFarmButton.Size = new Size(270, 40);
+            displayFarmButton.Size = new Size(178, 26);
             displayFarmButton.Text = "Display Farms";
             // 
             // addFarmsButton
             // 
             addFarmsButton.Name = "addFarmsButton";
-            addFarmsButton.Size = new Size(270, 40);
+            addFarmsButton.Size = new Size(178, 26);
             addFarmsButton.Text = "Add Farms";
             // 
             // kKDetailsToolStripMenuItem
@@ -160,74 +163,78 @@
             kKDetailsToolStripMenuItem.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             kKDetailsToolStripMenuItem.Image = Properties.Resources.icons8_records_30;
             kKDetailsToolStripMenuItem.Name = "kKDetailsToolStripMenuItem";
-            kKDetailsToolStripMenuItem.Size = new Size(165, 36);
+            kKDetailsToolStripMenuItem.Size = new Size(119, 28);
             kKDetailsToolStripMenuItem.Text = "KK Details";
             // 
             // regionToolStripMenuItem
             // 
             regionToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addRegionButton, dIsplayRegionsButton });
             regionToolStripMenuItem.Name = "regionToolStripMenuItem";
-            regionToolStripMenuItem.Size = new Size(195, 40);
+            regionToolStripMenuItem.Size = new Size(180, 26);
             regionToolStripMenuItem.Text = "Region";
             // 
             // addRegionButton
             // 
             addRegionButton.Name = "addRegionButton";
-            addRegionButton.Size = new Size(269, 40);
+            addRegionButton.Size = new Size(184, 26);
             addRegionButton.Text = "Add Region";
+            addRegionButton.Click += addRegionButton_Click;
             // 
             // dIsplayRegionsButton
             // 
             dIsplayRegionsButton.Name = "dIsplayRegionsButton";
-            dIsplayRegionsButton.Size = new Size(269, 40);
+            dIsplayRegionsButton.Size = new Size(184, 26);
             dIsplayRegionsButton.Text = "Show Records";
             // 
             // districtToolStripMenuItem
             // 
             districtToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addDistrictButton, displayDistrictButton });
             districtToolStripMenuItem.Name = "districtToolStripMenuItem";
-            districtToolStripMenuItem.Size = new Size(195, 40);
+            districtToolStripMenuItem.Size = new Size(180, 26);
             districtToolStripMenuItem.Text = "District";
             // 
             // addDistrictButton
             // 
             addDistrictButton.Name = "addDistrictButton";
-            addDistrictButton.Size = new Size(269, 40);
+            addDistrictButton.Size = new Size(184, 26);
             addDistrictButton.Text = "Add District";
+            addDistrictButton.Click += addDistrictButton_Click;
             // 
             // displayDistrictButton
             // 
             displayDistrictButton.Name = "displayDistrictButton";
-            displayDistrictButton.Size = new Size(269, 40);
+            displayDistrictButton.Size = new Size(184, 26);
             displayDistrictButton.Text = "Show Records";
             // 
             // zoneToolStripMenuItem
             // 
             zoneToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addZoneButton, showRecordsButton });
             zoneToolStripMenuItem.Name = "zoneToolStripMenuItem";
-            zoneToolStripMenuItem.Size = new Size(195, 40);
+            zoneToolStripMenuItem.Size = new Size(180, 26);
             zoneToolStripMenuItem.Text = "Zone";
             // 
             // addZoneButton
             // 
             addZoneButton.Name = "addZoneButton";
-            addZoneButton.Size = new Size(269, 40);
+            addZoneButton.Size = new Size(184, 26);
             addZoneButton.Text = "Add Zone";
+            addZoneButton.Click += addZoneButton_Click;
             // 
             // showRecordsButton
             // 
             showRecordsButton.Name = "showRecordsButton";
-            showRecordsButton.Size = new Size(269, 40);
+            showRecordsButton.Size = new Size(184, 26);
             showRecordsButton.Text = "Show Records";
             // 
             // BaseForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1180, 831);
+            ClientSize = new Size(826, 449);
             Controls.Add(panel1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(2);
             Name = "BaseForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KKSys";
