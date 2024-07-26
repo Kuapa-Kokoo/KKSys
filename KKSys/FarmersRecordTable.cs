@@ -15,7 +15,6 @@ namespace KKSys
     public partial class FarmersRecordTable : Form
     {
 
-        private Form currentChildForm;
         public FarmersRecordTable()
         {
             InitializeComponent();
@@ -132,22 +131,31 @@ namespace KKSys
 
         }
 
-        private void openChildForm(Form childForm)
+
+        private void changeForm(Form childForm)
         {
-            if (currentChildForm != null)
+
+            BaseForm baseForm = new BaseForm();
+
+            if(childForm != null)
             {
-                currentChildForm.Close();
+                childForm.Close();
             }
-            currentChildForm = childForm;
-            childForm.MdiParent = this;
+
+            baseForm.currentChildForm = childForm;
+            childForm.MdiParent = this.MdiParent;
             childForm.Show();
+
+            
         }
+
+        
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             newFarmer farmer = new newFarmer();
 
-            openChildForm(farmer);
+            changeForm(farmer);
 
 
         }
