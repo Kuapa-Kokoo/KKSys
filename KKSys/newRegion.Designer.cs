@@ -94,7 +94,7 @@
             textBox1.Location = new Point(241, 180);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(195, 25);
+            textBox1.Size = new Size(192, 25);
             textBox1.TabIndex = 5;
             // 
             // newRegion
