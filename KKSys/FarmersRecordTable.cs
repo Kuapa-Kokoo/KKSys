@@ -153,9 +153,7 @@ namespace KKSys
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            newFarmer farmer = new newFarmer();
-
-            changeForm(farmer);
+            
 
 
         }
@@ -163,7 +161,7 @@ namespace KKSys
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             FaarmerUpdate farmerUpdate = new FaarmerUpdate();
-            farmerUpdate.Show();
+            farmerUpdate.ShowDialog();
         }
     }
 }
