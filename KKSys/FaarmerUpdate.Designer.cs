@@ -264,6 +264,7 @@
             Name = "FaarmerUpdate";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FaarmerUpdate";
+            Load += FaarmerUpdate_Load;
             ResumeLayout(false);
             PerformLayout();
         }
