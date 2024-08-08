@@ -15,6 +15,8 @@ namespace KKSys
     public partial class FarmersRecordTable : Form
     {
 
+        public int farmerID;
+
         public FarmersRecordTable()
         {
             InitializeComponent();
@@ -84,9 +86,8 @@ namespace KKSys
         }
         private void farmersTableGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-
-
+            var selectedRow = farmersTableGrid.SelectedRows[0];
+            farmerID = int.Parse(s: selectedRow.Cells["ID"].Value.ToString());
         }
 
 
